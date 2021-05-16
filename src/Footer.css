@@ -1,0 +1,8 @@
+div .footer {
+  color: rgb(15, 15, 15);
+  font-family: "Varta", sans-serif;
+  font-size: 10px;
+  margin-top: -25px;
+  text-align: center;
+  text-transform: uppercase;
+}

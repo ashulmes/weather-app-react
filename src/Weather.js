@@ -1,16 +1,45 @@
 import React from "react";
-import axios from "axios";
+import "./App.css";
+import "./Weather.css";
 
 export default function Weather() {
-  function showTemperature(response) {
-    alert(`The temperature in Manchester is ${response.data.main.temp}°C`);
-  }
+  let weatherData = {
+    city: "Manchester",
+    date: "24 Apr, 19:55",
+    description: "Clear Sky",
+    icon: "http://openweathermap.org/img/wn/01d@2x.png",
+    temperature: 18,
+    feelsLike: 12,
+    wind: 7,
+    humidity: 14,
+  };
 
-  let apiKey = "4a150b550611ee8a27e04e337620852b";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Manchester&appid=${apiKey}&units=${units}`;
+  return (
+    <div>
+      <h1>{weatherData.city}</h1>
+      <p>Updated: {weatherData.date}</p>
+      <img
+        src={weatherData.icon}
+        className="weather-icon"
+        alt={weatherData.description}
+      />
+      <span className="temperature-value">{weatherData.temperature}</span>
+      <span className="temperature-metric">°C</span>
+      <p className="weather-description">{weatherData.description}</p>
 
-  axios.get(apiUrl).then(showTemperature);
+      <section className="weather-info">
+        <div className="row justify-content-center headings">
+          <div className="col-3">Feels Like</div>
+          <div className="col-3">Wind</div>
+          <div className="col-3">Humidity</div>
+        </div>
 
-  return <h2>Hello from Weather!</h2>;
+        <div className="row justify-content-center">
+          <div className="col-3">{weatherData.feelsLike}°C</div>
+          <div className="col-3">{weatherData.wind} MPH</div>
+          <div className="col-3">{weatherData.humidity}%</div>
+        </div>
+      </section>
+    </div>
+  );
 }

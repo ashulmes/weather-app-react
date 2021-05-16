@@ -1,13 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import Search from "./Search";
 import Weather from "./Weather";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
+
+import "./App.css";
+import "./Footer.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="container">
+      <div className="app-contents">
+        <Search />
         <Weather />
-      </header>
+        <Forecast />
+      </div>
+      <Footer />
     </div>
   );
 }
