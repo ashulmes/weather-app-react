@@ -27,8 +27,8 @@ export default function FormattedDate(props) {
   }
 
   return (
-    <div>
+    <span>
       {date} {month}, {hours}:{minutes}
-    </div>
+    </span>
   );
 }
