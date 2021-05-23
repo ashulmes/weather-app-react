@@ -12,7 +12,6 @@ export default function App() {
     <div className="container">
       <div className="app-contents">
         <Weather defaultCity="Manchester" />
-        <Forecast />
       </div>
       <Footer />
     </div>
