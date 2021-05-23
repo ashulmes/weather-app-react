@@ -12,8 +12,8 @@ export default function WeatherInformation(props) {
       </p>
       <img
         src={props.data.icon}
-        className="weather-icon"
         alt={props.data.description}
+        className="weather-icon"
       />
       <span className="temperature-value">
         {Math.round(props.data.temperature)}
