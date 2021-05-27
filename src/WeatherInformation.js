@@ -19,7 +19,9 @@ export default function WeatherInformation(props) {
         />
       </span>
       <span>
-        <span className="temperature-value">{props.data.temperature}</span>
+        <span className="temperature-value">
+          {Math.round(props.data.temperature)}
+        </span>
         <span className="temperature-metric">°C</span>
         <p className="weather-description">{props.data.description}</p>
       </span>
