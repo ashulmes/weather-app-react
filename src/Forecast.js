@@ -6,10 +6,10 @@ import "./Forecast.css";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
-  let [forecastData, setForecastData] = useState(null);
+  let [forecast, setForecast] = useState(null);
 
   function handleResponse(response) {
-    setForecastData(response.data.daily);
+    setForecast(response.data.daily);
     setLoaded(true);
   }
 
@@ -17,9 +17,15 @@ export default function Forecast(props) {
     return (
       <div className="forecast-tabs">
         <div className="row forecast-daily">
-          <div className="col">
-            <DailyWeatherForecast data={forecastData[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <DailyWeatherForecast data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );

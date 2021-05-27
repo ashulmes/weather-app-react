@@ -7,12 +7,12 @@ import "./App.css";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ loaded: false });
+  const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
-      loaded: true,
+      ready: true,
       coordinates: response.data.coord,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
@@ -41,7 +41,7 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  if (weatherData.loaded) {
+  if (weatherData.ready) {
     return (
       <div>
         <div className="search-form">
