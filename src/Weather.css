@@ -37,26 +37,13 @@ section .headings {
   font-weight: 900;
 }
 
-.metric-links {
-  color: rgb(15, 15, 15);
-  text-decoration: none;
-  transition: ease-in-out 200ms;
-  font-weight: 300;
-}
-
-.metric-links:hover {
-  color: #6c757d;
-  cursor: pointer;
-}
-
 .temperature-metric {
   color: rgb(15, 15, 15);
   font-size: 16px;
   position: relative;
   bottom: 35px;
-  left: 3px;
+  left: 1px;
   text-decoration: none;
-  font-weight: 900;
 }
 
 .weather-icon {
